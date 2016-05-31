@@ -50,7 +50,7 @@ Slidemenu for ios application
 
 - (IBAction)btn2_Action:(id)sender {
 
-     [slideMenu PushBtnClick:@"view2_ViewController(use your Storyboard id)" ViewController:self]; // add this code
+     [slideMenu PushBtnClick:@"view2_ViewController(use your Storyboard id)" ViewController:self BouncingAnimation:YES(orNO)]; // add this code
     
 }
 
