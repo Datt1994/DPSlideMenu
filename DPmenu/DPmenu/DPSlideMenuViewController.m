@@ -1,9 +1,9 @@
 //
-//  SlideMenuViewController.m
-//  ShiponK
+//  DPSlideMenuViewController.m
+//  DPmenu
 //
-//  Created by datt on 28/02/1938 SAKA.
-//  Copyright © 1938 SAKA com.zaptechsolution. All rights reserved.
+//  Created by datt on 30/05/2016.
+//  Copyright © 2016  datt. All rights reserved.
 //
 
 #import "DPSlideMenuViewController.h"
@@ -11,11 +11,12 @@
 
 @interface DPSlideMenuViewController ()
 {
-    UIViewController *tm;
+    UIViewController *mainViewController;
     UITapGestureRecognizer *tap;
     BOOL menuclick;
     
-    UIViewController *firstViewController;
+    
+    UIViewController *objViewController;
     
 }
 @property (nonatomic, strong) UITableView *tableView;
@@ -26,8 +27,8 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-   
-
+    
+    
 }
 
 - (void)didReceiveMemoryWarning {
@@ -37,12 +38,12 @@
 
 
 -(void)initSwipeAndTap:(UIViewController *)m{
-    tm=m;
+    mainViewController=m;
     
     tap =[[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(tap)];
-    [tm.view addGestureRecognizer:tap];
+    [mainViewController.view addGestureRecognizer:tap];
     
-
+    
     
     
     UISwipeGestureRecognizer *swipeLeft = [[UISwipeGestureRecognizer alloc] initWithTarget:self action:@selector(slideToLeftWithGesture)];
@@ -54,13 +55,13 @@
     UISwipeGestureRecognizer *swipeRight = [[UISwipeGestureRecognizer alloc] initWithTarget:self action:@selector(slideToRightWithGesture)];
     swipeRight.direction = UISwipeGestureRecognizerDirectionRight;
     [m.view addGestureRecognizer:swipeRight];
-
+    
     
 }
 
--(BOOL)menuBtnClick:(UIViewController *)m{
-//
-    tm=m;
+-(void)menuBtnClick:(UIViewController *)m{
+    
+    mainViewController=m;
     
     
     if (menuclick==NO) {
@@ -80,41 +81,39 @@
         menuclick=NO;
         
     }
-    return m;
-
     
     
 }
 -(void)tap
 {
     
-
+    
     if (menuclick==YES) {
         
-
+        
         [UIView animateWithDuration:.5 animations:^{
             
-            tm.view.frame =CGRectOffset(tm.view.frame,-(tm.view.frame.size.width-85),0);
+            mainViewController.view.frame =CGRectOffset(mainViewController.view.frame,-(mainViewController.view.frame.size.width-85),0);
             
         }];
         menuclick=NO;
         
     }
-
+    
     
 }
 -(void)slideToLeftWithGesture{
     if (menuclick==YES) {
         
         [UIView animateWithDuration:.5 animations:^{
-            tm.view.frame =CGRectOffset(tm.view.frame, -(tm.view.frame.size.width-85),0);
+            mainViewController.view.frame =CGRectOffset(mainViewController.view.frame, -(mainViewController.view.frame.size.width-85),0);
             
         }];
-
+        
         
         menuclick=NO;
     }
-
+    
     
 }
 -(void)slideToRightWithGesture{
@@ -122,52 +121,52 @@
     if (menuclick==NO) {
         
         [UIView animateWithDuration:.5 animations:^{
-            tm.view.frame =CGRectOffset(tm.view.frame, tm.view.frame.size.width-85,0);
+            mainViewController.view.frame =CGRectOffset(mainViewController.view.frame, mainViewController.view.frame.size.width-85,0);
             
         }];
-               menuclick=YES;
+        menuclick=YES;
     }
-
+    
     
 }
 -(void)initView:(NSString *)str ViewController:(UIViewController*)vc
 
 {
-        firstViewController = (UIViewController *) [[UIStoryboard storyboardWithName:@"Main" bundle:nil]        instantiateViewControllerWithIdentifier:str];
+    objViewController = (UIViewController *) [[UIStoryboard storyboardWithName:@"Main" bundle:nil]        instantiateViewControllerWithIdentifier:str];
     
-        [vc.view addSubview:firstViewController.view];
-        [vc addChildViewController:firstViewController];
-        [firstViewController didMoveToParentViewController:vc];
+    [vc.view addSubview:objViewController.view];
+    [vc addChildViewController:objViewController];
+    [objViewController didMoveToParentViewController:vc];
     
 }
 
 -(void)PushBtnClick:(NSString *)str ViewController:(UIViewController*)vc
 {
-    [firstViewController.view removeFromSuperview];
+    [objViewController.view removeFromSuperview];
     
-    [firstViewController removeFromParentViewController];
+    [objViewController removeFromParentViewController];
     
-    [firstViewController didMoveToParentViewController:nil];
-    
-    
+    [objViewController didMoveToParentViewController:nil];
     
     
-    firstViewController = (UIViewController *) [[UIStoryboard storyboardWithName:@"Main" bundle:nil]        instantiateViewControllerWithIdentifier:str] ;
     
-    [vc.view addSubview:firstViewController.view];
-    [vc addChildViewController:firstViewController];
-    [firstViewController didMoveToParentViewController:vc];
-   
+    
+    objViewController = (UIViewController *) [[UIStoryboard storyboardWithName:@"Main" bundle:nil]        instantiateViewControllerWithIdentifier:str] ;
+    
+    [vc.view addSubview:objViewController.view];
+    [vc addChildViewController:objViewController];
+    [objViewController didMoveToParentViewController:vc];
+    
     
     CABasicAnimation *animation = [CABasicAnimation animation];
-      animation.keyPath = @"position.x";
+    animation.keyPath = @"position.x";
     animation.fromValue = @(vc.view.frame.size.width+80);
     animation.toValue = @(vc.view.frame.size.width/2);
     animation.duration = .35;
-
-    [firstViewController.view.layer addAnimation:animation forKey:@"basic"];
-
-
+    
+    [objViewController.view.layer addAnimation:animation forKey:@"basic"];
+    
+    
     
 }
 
