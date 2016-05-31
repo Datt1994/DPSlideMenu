@@ -34,7 +34,7 @@ use in menu-ViewController
 
 
 
-Use in other ViewController 
+Use in other ViewControllers 
 
 /*
 
