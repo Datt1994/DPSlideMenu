@@ -186,7 +186,7 @@
 + (CAKeyframeAnimation*)dockBounceAnimationWithViewWidth:(CGFloat)viewWidth
 {
     NSUInteger const kNumFactors    = 16;
-    CGFloat const kFactorsPerSec    = 30.0f;
+    CGFloat const kFactorsPerSec    = 40.0f;
     CGFloat const kFactorsMaxValue  = 100.0f;
     CGFloat factors[kNumFactors]    = {0,  60, 83, 100, 100, 83, 60, 32, 0, 0, 18, 28, 32, 28, 18, 0};
     
