@@ -1,64 +1,90 @@
 # DPSlideMenu
 Slidemenu for ios application
 
+1st Step-> import DPSlideMenuViewController in all ViewController
 
-use in menu-ViewController
-
-/*
-
-//For Swipe and Tap
-
-- (void)viewDidLoad {
-
-    [super viewDidLoad];
-
-    slideMenu =[[DPSlideMenuViewController alloc]init];
-    
-    [slideMenu initSwipeAndTap:self];
-    
-    // Do any additional setup after loading the view.
-}
+#import "DPSlideMenuViewController.h"
 
 
 
-//For slide menu appear
+2nd Step-> Create object of DPSlideMenuViewController in all ViewController
 
-- (IBAction)menu_Action:(id)sender {
+@interface ViewController ()
+{
 
-    [slideMenu menuBtnClick:self];
-
-}
-
-*/
-
-
-
-
-Use in other ViewControllers 
-
-/*
-
-//For Initializing First View
-
-- (void)viewDidLoad {
-
-    [super viewDidLoad];
-    
     DPSlideMenuViewController *slideMenu;
     
-    slideMenu=[[DPSlideMenuViewController alloc]init];
+}
+
+3rd step-> alloc & init in all ViewController
+
+- (void)viewDidLoad {
+
+    [super viewDidLoad];
     
-    [slideMenu initView:@"view1_ViewController" ViewController:self];
+    slideMenu=[[DPSlideMenuViewController alloc]init]; // add this code
 
     
 }
 
-//For Push ViewController
 
-- (IBAction)btn1_Action:(id)sender {
+4th step-> In menu-ViewController assign first ViewController(use Storyboard id)  
 
-     [slideMenu PushBtnClick:[NSString stringWithFormat:@"view1_ViewController"] ViewController:self];
+/*
+
+//For Initializing First ViewController (only give Storyboard id as a string)
+
+- (void)viewDidLoad {
+
+    [super viewDidLoad];
+    
+    [slideMenu initView:@"view1_ViewController(use your Storyboard id)" ViewController:self];  //add this code 
+
     
 }
+
+5th step-> In menu-ViewController  add this code into button Action
+
+//For Button Action - Push to that ViewController (only give Storyboard id as a string)
+
+- (IBAction)btn2_Action:(id)sender {
+
+     [slideMenu PushBtnClick:@"view2_ViewController(use your Storyboard id)" ViewController:self]; // add this code
+    
+}
+
 */
+
+6th step-> In all other ViewControllers add this code 
+
+/*
+
+//For add Swipe and Tap Gesture
+
+- (void)viewDidLoad {
+
+    [super viewDidLoad];
+    
+    [slideMenu initSwipeAndTap:self]; // add this code  
+    
+}
+
+//For menu button click then  slide menu appear
+
+- (IBAction)menu_btn_Action:(id)sender {
+
+    [slideMenu menuBtnClick:self]; //add this code in menu button action
+
+}
+
+
+
+
+
+
+
+*/
+
+
+
 
