@@ -26,15 +26,12 @@ Slidemenu for ios application
     [super viewDidLoad];
     
     slideMenu=[[DPSlideMenuViewController alloc]init]; // add this code
-
     
 }
 
 
 #4th step
 -> In menu-ViewController assign first ViewController(use Storyboard id)  
-
-/*
 
 //For Initializing First ViewController (only give Storyboard id as a string)
 
@@ -43,7 +40,6 @@ Slidemenu for ios application
     [super viewDidLoad];
     
     [slideMenu initView:@"view1_ViewController(use your Storyboard id)" ViewController:self];  //add this code 
-
     
 }
 
@@ -58,12 +54,8 @@ Slidemenu for ios application
     
 }
 
-*/
-
 #6th step
 -> In all other ViewControllers add this code 
-
-/*
 
 //For add Swipe and Tap Gesture
 
@@ -76,7 +68,6 @@ Slidemenu for ios application
 }
 
 //For menu button click 
-//then  slide menu appear
 
 - (IBAction)menu_btn_Action:(id)sender {
 
@@ -84,9 +75,4 @@ Slidemenu for ios application
 
 }
 
-
-*/
-
-
-
-
+//then  slide menu appear
