@@ -75,7 +75,8 @@ Slidemenu for ios application
     
 }
 
-//For menu button click then  slide menu appear
+//For menu button click 
+//then  slide menu appear
 
 - (IBAction)menu_btn_Action:(id)sender {
 
