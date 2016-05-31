@@ -12,7 +12,6 @@
 -(void)menuBtnClick:(UIViewController *)m;
 -(void)tap;
 -(void)initSwipeAndTap:(UIViewController *)m;
--(void)PushBtnClick:(NSString *)str ViewController:(UIViewController*)vc;
+-(void)PushBtnClick:(NSString *)str ViewController:(UIViewController*)vc BouncingAnimation:(BOOL)bounc;
 -(void)initView:(NSString *)str ViewController:(UIViewController*)vc;
-
 @end
