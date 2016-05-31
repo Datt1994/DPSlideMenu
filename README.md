@@ -1,13 +1,15 @@
 # DPSlideMenu
 Slidemenu for ios application
 
-1st Step-> import DPSlideMenuViewController in all ViewController
+#1st Step
+->import DPSlideMenuViewController in all ViewController
 
-#import "DPSlideMenuViewController.h"
+ #import "DPSlideMenuViewController.h"
 
 
 
-2nd Step-> Create object of DPSlideMenuViewController in all ViewController
+#2nd Step
+-> Create object of DPSlideMenuViewController in all ViewController
 
 @interface ViewController ()
 {
@@ -16,7 +18,8 @@ Slidemenu for ios application
     
 }
 
-3rd step-> alloc & init in all ViewController
+#3rd step
+-> alloc & init in all ViewController
 
 - (void)viewDidLoad {
 
@@ -28,7 +31,8 @@ Slidemenu for ios application
 }
 
 
-4th step-> In menu-ViewController assign first ViewController(use Storyboard id)  
+#4th step
+-> In menu-ViewController assign first ViewController(use Storyboard id)  
 
 /*
 
@@ -43,7 +47,8 @@ Slidemenu for ios application
     
 }
 
-5th step-> In menu-ViewController  add this code into button Action
+#5th step
+-> In menu-ViewController  add this code into button Action
 
 //For Button Action - Push to that ViewController (only give Storyboard id as a string)
 
@@ -55,7 +60,8 @@ Slidemenu for ios application
 
 */
 
-6th step-> In all other ViewControllers add this code 
+#6th step
+-> In all other ViewControllers add this code 
 
 /*
 
@@ -76,11 +82,6 @@ Slidemenu for ios application
     [slideMenu menuBtnClick:self]; //add this code in menu button action
 
 }
-
-
-
-
-
 
 
 */
