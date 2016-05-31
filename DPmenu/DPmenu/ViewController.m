@@ -26,16 +26,16 @@
 }
 
 - (IBAction)btn1_Action:(id)sender {
-     [slideMenu PushBtnClick:[NSString stringWithFormat:@"view1_ViewController"] ViewController:self];
+     [slideMenu PushBtnClick:[NSString stringWithFormat:@"view1_ViewController"] ViewController:self BouncingAnimation:YES];
     
 }
 
 - (IBAction)btn2_Action:(id)sender {
-     [slideMenu PushBtnClick:[NSString stringWithFormat:@"view2_ViewController"] ViewController:self];
+     [slideMenu PushBtnClick:[NSString stringWithFormat:@"view2_ViewController"] ViewController:self BouncingAnimation:NO];
 }
 
 - (IBAction)btn3_Action:(id)sender {
-     [slideMenu PushBtnClick:[NSString stringWithFormat:@"view3_ViewController"] ViewController:self];
+     [slideMenu PushBtnClick:[NSString stringWithFormat:@"view3_ViewController"] ViewController:self BouncingAnimation:YES];
 }
 
 
